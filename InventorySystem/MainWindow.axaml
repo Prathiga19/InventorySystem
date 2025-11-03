@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="InventorySystem.MainWindow"
+        Title="Mit Inventory System"
+        Width="800" Height="600">
+
+    <StackPanel Margin="20" Spacing="15">
+        <TextBlock Text="Mit Inventory System" FontSize="24" HorizontalAlignment="Center"/>
+        
+        <TextBlock Text="{Binding TotalPris, StringFormat='Total indtægt: {0:F2} kr'}" 
+                   FontSize="22" HorizontalAlignment="Center" Foreground="Green"/>
+
+        <Button Content="Behandle næste ordre" 
+                Click="BehandleKnap_Click" 
+                HorizontalAlignment="Center" Width="220" Height="45" FontSize="18"/>
+
+        <TextBlock Text="Ventende ordrer" FontSize="18"/>
+        <DataGrid ItemsSource="{Binding VentendeOrdrer}" AutoGenerateColumns="True" Height="180" GridLinesVisibility="All"/>
+
+        <TextBlock Text="Færdige ordrer" FontSize="18"/>
+        <DataGrid ItemsSource="{Binding FærdigeOrdrer}" AutoGenerateColumns="True" Height="180" GridLinesVisibility="All"/>
+    </StackPanel>
+</Window>
